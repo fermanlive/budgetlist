@@ -37,7 +37,7 @@
     <div class="login-area">
         <div class="container">
             <div class="login-box ptb--100">
-                <form>
+                <form action="<?php echo base_url('/register/loginvalidate') ?>" method="POST">
                     <div class="login-form-head">
                         <h4>Sign In</h4>
                         <p>Hello there, Sign in and start managing your Admin Template</p>
@@ -45,12 +45,12 @@
                     <div class="login-form-body">
                         <div class="form-gp">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" id="exampleInputEmail1">
+                            <input type="email" id="email" name="email">
                             <i class="ti-email"></i>
                         </div>
                         <div class="form-gp">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" id="exampleInputPassword1">
+                            <input type="password" id="password" name="password">
                             <i class="ti-lock"></i>
                         </div>
                         <div class="row mb-4 rmber-area">
@@ -76,7 +76,7 @@
                             </div>
                         </div>
                         <div class="form-footer text-center mt-5">
-                            <p class="text-muted">Don't have an account? <a href="register.html">Sign up</a></p>
+                            <p class="text-muted">Don't have an account? <a href="<?php echo base_url('/registro') ?>">Sign up</a></p>
                         </div>
                     </div>
                 </form>
@@ -98,6 +98,7 @@
     <!-- others plugins -->
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/scripts.js"></script>
+    <script src="<?php echo base_url('assets/js/register/register.js') ?>"></script>
 </body>
 
 </html>

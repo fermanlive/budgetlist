@@ -10,6 +10,7 @@ class Register extends CI_Controller {
         
     $this->load->model('sessions_model');
     $this->load->helper('url');
+    $this->load->library('session');
     }
 
 
@@ -33,5 +34,13 @@ class Register extends CI_Controller {
 	public function login()
 	{
 		$this->load->view('login');
+	}	
+
+	public function loginvalidate()
+	{        
+        $email = $this->input->post('email'); 
+        $password = $this->input->post('password');
+        $result = $this->sessions_model->Dologin($email,$password);
+       	$result > 0 ? redirect('register/index') :  redirect('login');
 	}	
 }
