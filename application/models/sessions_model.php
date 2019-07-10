@@ -1,10 +1,7 @@
-<?php
-
-if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class sessions_model extends CI_Model {
+class Sessions_model extends CI_Model {
 
     public function __construct() {
         parent::__construct();    
