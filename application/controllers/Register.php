@@ -11,15 +11,21 @@ class Register extends CI_Controller {
     $this->load->model('sessions_model');
     $this->load->helper('url');
     $this->load->library('session');
+
+
     }
 
 
 	public function index(){
 		$this->load->view('index');
+	    $this->userdata = $this->session->userdata();
+	    var_dump($this->userdata);
 	}
 	
 	public function registro() {
-		$this->load->view('register');
+		$this->load->view('session/header');
+		$this->load->view('session/register');
+		$this->load->view('session/footer');
 	}
 
 	 public function save_register()
@@ -31,9 +37,10 @@ class Register extends CI_Controller {
 		echo $result;
 	}	
 	
-	public function login()
-	{
-		$this->load->view('login');
+	public function login(){	
+		$this->load->view('session/header');
+		$this->load->view('session/login');
+		$this->load->view('session/footer');
 	}	
 
 	public function loginvalidate()

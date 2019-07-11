@@ -6,6 +6,8 @@ class Sessions_model extends CI_Model {
     public function __construct() {
         parent::__construct();    
         $this->load->helper('security');
+        $this->load->library('session');
+
     }
 
     public function saveRegister($name,$email,$password) {
@@ -23,6 +25,7 @@ class Sessions_model extends CI_Model {
         $result = ($id>0) ?  1 : 0 ;
         return $result;  
     }
+
     public function DoLogin($email,$password){
         $password = do_hash($password, 'md5'); 
         $this->db->select("*");
@@ -31,6 +34,20 @@ class Sessions_model extends CI_Model {
         $this->db->where("password",$password); 
 
         $query = $this->db->get();
-        return ($query->num_rows()>0) ? 1 : 0; 
+        if($query->num_rows()>0){
+            $userinfo = $query->result();  
+            $newdata = array(
+                    'iduser'     => $userinfo[0]->iduser,
+                    'Username'  => $userinfo[0]->Username,
+                    'email'     => $userinfo[0]->email,
+                    'logged_in' => TRUE
+            );
+            $this->session->set_userdata($newdata);
+            return 1;
+        }else{
+            return 0;
+        }
+        
     }
+
 }
