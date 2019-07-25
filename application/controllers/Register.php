@@ -17,9 +17,7 @@ class Register extends CI_Controller {
 
 
 	public function index(){
-		$this->load->view('index');
-	    $this->userdata = $this->session->userdata();
-	    var_dump($this->userdata);
+		$this->load->view('welcome');
 	}
 	
 	public function registro() {
