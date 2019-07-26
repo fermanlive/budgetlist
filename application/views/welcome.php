@@ -54,8 +54,7 @@
     <nav class="flex flex-row justify-center justify-end-l items-center flex-wrap ph2 pl3-ns pr4-ns pb3">
   <div class="brand flex-auto w-100 w-auto-l self-start tc tl-l">
     <a href="https://www.rust-lang.org/" class="brand">
-      <img class="v-mid ml0-l" alt="Rust Logo" src="./buBbu_files/rust-logo-blk.svg">
-      
+      <img class="v-mid ml0-l" alt="Rust Logo" src="<?php echo base_url('assets/images/indexpage/logo.png') ?>">
     </a>
   </div>
 
