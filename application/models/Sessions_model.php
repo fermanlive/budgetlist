@@ -42,7 +42,7 @@ class Sessions_model extends CI_Model {
                     'email'     => $userinfo[0]->email,
                     'logged_in' => TRUE
             );
-            $this->session->set_userdata($newdata);
+             $this->session->set_userdata('session_userdata', $newdata);
             return 1;
         }else{
             return 0;

@@ -58,15 +58,12 @@
       
     </a>
   </div>
-<!-- 
+
   <ul class="nav list w-100 w-auto-l flex flex-none flex-row flex-wrap justify-center justify-end-l items-center pv2 ph0 ph4-ns">
-    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://www.rust-lang.org/tools/install">Install</a></li>
-    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://www.rust-lang.org/learn">Learn</a></li>
-    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://www.rust-lang.org/tools">Tools</a></li>
-    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://www.rust-lang.org/governance">Governance</a></li>
-    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://www.rust-lang.org/community">Community</a></li>
-    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://blog.rust-lang.org/">Blog</a></li>
-  </ul> -->
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="<?php echo base_url('about') ?>">Que es Budgetlist?</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="<?php echo base_url('about_us') ?>">Acerca de nosotros</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="<?php echo base_url('login') ?>">Iniciar Sesion</a></li>
+  </ul> 
 
 <!--   <div class=" w-100 w-auto-l flex-none flex justify-center pv4 pv-0-l languages">
     <label for="language-nav" class="hidden">Language</label>
@@ -87,14 +84,14 @@
 <header class="mt3 mt0-ns mb6-ns w-100 mw-none ph3 mw8-m mw9-l center">
   <div class="flex flex-column flex-row-l">
     <div class="w-80-l pl6-l pl3 mw8-l">
-      <h1>Rust</h1>
+      <h1>Budgetlist</h1>
       <h2 class="mt4 f2 f1-ns">
-        A language empowering everyone <br class="dn db-ns"> to build reliable and efficient software.
+        Una lista de tu presupuesto<br class="dn db-ns">gestionable y manipulable por ti.
       </h2>
     </div>
     <div class="w-20-l flex-column pl0-l pr0-l pl3 pr3">
-      <a class="button button-download ph4 mt0 w-100" href="https://www.rust-lang.org/learn/get-started">
-        Get Started
+      <a class="button button-download ph4 mt0 w-100" href="<?php echo base_url('registro') ?>">
+        Registro Aqui
       </a>
 <!--       <p class="tc f3 f2-l mt3">
         <a href="https://blog.rust-lang.org/2019/07/04/Rust-1.36.0.html" class="download-link">Version 1.36.0</a>
@@ -107,34 +104,33 @@
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header class="pb0">
       <h2>
-        Why Rust?
+        Porque Budgetlist?
       </h2>
       <div class="highlight"></div>
     </header>
     <div class="flex-none flex-l">
       <section class="w-100 pv2 pv0-l mt4">
-        <h3 class="f2 f1-l">Performance</h3>
+        <h3 class="f2 f1-l">Gestionable</h3>
         <p class="f3 lh-copy">
-          Rust is blazingly fast and memory-efficient: with no runtime or
-garbage collector, it can power performance-critical services, run on
-embedded devices, and easily integrate with other languages.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam.
         </p>
       </section>
       <section class="w-100 pv2 pv0-l mt4 mh5-l">
-        <h3 class="f2 f1-l">Reliability</h3>
+        <h3 class="f2 f1-l">Ajustable</h3>
         <p class="f3 lh-copy">
-          Rust’s rich type system and ownership model guarantee memory-safety
-and thread-safety — and enable you to eliminate many classes of
-bugs at compile-time.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam.
         </p>
       </section>
       <section class="w-100 pv2 pv0-l mt4">
-        <h3 class="f2 f1-l">Productivity</h3>
+        <h3 class="f2 f1-l">Productiva</h3>
         <p class="f3 lh-copy">
-          Rust has great documentation, a friendly compiler with useful error
-messages, and top-notch tooling — an integrated package manager
-and build tool, smart multi-editor support with auto-completion and 
-type inspections, an auto-formatter, and more.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam.
         </p>
       </section>
 
