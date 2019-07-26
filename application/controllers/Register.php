@@ -18,24 +18,7 @@ class Register extends CI_Controller {
 
 	public function index(){
 		$this->load->view('index');
-	    $this->userdata = $this->session->userdata();
-	    var_dump($this->userdata);
 	}
-	
-	public function registro() {
-		$this->load->view('session/header');
-		$this->load->view('session/register');
-		$this->load->view('session/footer');
-	}
-
-	 public function save_register()
-	{
-		$name = $this->input->post('name');           
-        $email = $this->input->post('email');           
-        $password = $this->input->post('password');  
-        $result = $this->sessions_model->saveRegister($name, $email, $password);   
-		echo $result;
-	}	
 	
 	public function login(){	
 		$this->load->view('session/header');
@@ -48,6 +31,26 @@ class Register extends CI_Controller {
         $email = $this->input->post('email'); 
         $password = $this->input->post('password');
         $result = $this->sessions_model->Dologin($email,$password);
-       	$result > 0 ? redirect('register/index') :  redirect('login');
+       	$result > 0 ? redirect('gastos') :  redirect('login');
 	}	
+
+	public function logout(){        
+		$this->session->sess_destroy();
+		redirect();
+	}	
+
+	public function registro() {
+		$this->load->view('session/header');
+		$this->load->view('session/register');
+		$this->load->view('session/footer');
+	}
+
+	 public function save_register()
+	{
+		$name = $this->input->post('name');           
+        $email = $this->input->post('email');           
+        $password = $this->input->post('password');  
+        $result = $this->sessions_model->saveRegister($name, $email, $password);   
+	}	
+	
 }
