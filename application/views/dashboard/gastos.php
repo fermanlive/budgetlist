@@ -315,7 +315,7 @@
                     <div class="col-sm-6 clearfix">
                         <div class="user-profile pull-right">
                             <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar">
-                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Kumkum Rai <i class="fa fa-angle-down"></i></h4>
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown"><?php echo $session['Username']; ?> <i class="fa fa-angle-down"></i></h4>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Message</a>
                                 <a class="dropdown-item" href="#">Settings</a>
@@ -461,18 +461,21 @@
                                             <thead class="text-uppercase">
                                                 <tr>
                                                     <th scope="col">ID</th>
-                                                    <th scope="col">task</th>
-                                                    <th scope="col">Deadline</th>
-                                                    <th scope="col">Progress</th>
+                                                    <th scope="col">Mes</th>
+                                                    <th scope="col">Fecha de inicio</th>
+                                                    <th scope="col">Fecha de fin</th>
+                                                    <th scope="col">Total alcanzado</th>
                                                     <th scope="col">status</th>
                                                     <th scope="col">action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <?php foreach ($months as $key => $month) { ?>  
                                                 <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Mark</td>
+                                                    <th scope="row"><?php echo $key; ?></th>
+                                                    <td><?php echo $month['Name']; ?></td>
                                                     <td>09 / 07 / 2018</td>
+                                                     <td>09 / 07 / 2018</td>
                                                     <td>
                                                         <div class="progress" style="height: 8px;">
                                                             <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -486,6 +489,8 @@
                                                         </ul>
                                                     </td>
                                                 </tr>
+                                                <?php } ?>
+
                                                 <tr>
                                                     <th scope="row">2</th>
                                                     <td>Mark</td>

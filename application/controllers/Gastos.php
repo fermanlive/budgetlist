@@ -23,8 +23,9 @@ class Gastos extends CI_Controller {
 
 
 	public function index(){
-	    $data['session'] = $this->userdata;
+	    $data['session'] = $this->userdata['session_userdata'];
 		$data['categorias'] = $this->gastos_model->getCategoriaEgreso();
+		$data['months'] = $this->gastos_model->getAllMonths($this->userdata['session_userdata']['iduser']);
 		$this->load->view('dashboard/header', $data);
 		$this->load->view('dashboard/gastos');
 		$this->load->view('dashboard/footer');
@@ -46,6 +47,15 @@ class Gastos extends CI_Controller {
 		$DateExpense = $data->DateExpense;
 		$priorityExpense = $data->priorityExpense;
 		$result = $this->gastos_model->saveExpense($nameExpense, $TypeExpense, $MountExpense,$DateExpense,$priorityExpense);   
+	}
+	public function saveMonth(){
+		$data = $this->input->post('data'); # add this
+		$data = json_decode($data);
+		$DateInitMonth = $data->DateInitMonth;
+		$DateEndMonth = $data->DateEndMonth;
+		$nameMonth = $data->nameMonth;
+		$iduser = $this->userdata['session_userdata']['iduser'];
+		$result = $this->gastos_model->saveMonth($DateInitMonth,$DateEndMonth,$nameMonth,$iduser);   
 	}
 
 }
