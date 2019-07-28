@@ -14,7 +14,6 @@ class Gastos extends CI_Controller {
     $this->load->library('session');
 
     $this->userdata = $this->session->userdata();
-    var_dump($this->userdata['session_userdata']);
    	if(empty($this->userdata['session_userdata'])){
    		redirect(login);
    	}
@@ -56,6 +55,18 @@ class Gastos extends CI_Controller {
 		$nameMonth = $data->nameMonth;
 		$iduser = $this->userdata['session_userdata']['iduser'];
 		$result = $this->gastos_model->saveMonth($DateInitMonth,$DateEndMonth,$nameMonth,$iduser);   
+		echo 1 ;
 	}
 
+	public function reloadMonth(){
+		$iduser = $this->userdata['session_userdata']['iduser'];
+		$result = $this->gastos_model->getAllMonths($iduser);   
+		echo json_encode($result);
+	}
+
+	public function deleteMonth($idmonth){
+		$iduser = $this->userdata['session_userdata']['iduser'];
+		$result = $this->gastos_model->deleteMonth($idmonth,$iduser);  
+		exit;
+	}
 }

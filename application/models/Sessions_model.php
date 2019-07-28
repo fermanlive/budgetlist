@@ -40,6 +40,7 @@ class Sessions_model extends CI_Model {
                     'iduser'     => $userinfo[0]->iduser,
                     'Username'  => $userinfo[0]->Username,
                     'email'     => $userinfo[0]->email,
+                    'WEB'     => TRUE,
                     'logged_in' => TRUE
             );
              $this->session->set_userdata('session_userdata', $newdata);

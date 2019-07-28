@@ -58,3 +58,4 @@ $route['login'] = 'Register/login';
 $route['logout'] = 'Register/logout';
 $route['gastos'] = 'Gastos';
 $route['graficas'] = 'Gastos/graficas';
+$route['deleteMonth/:num'] = 'Gastos/deleteMonth/$1';

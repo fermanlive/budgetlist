@@ -43,7 +43,20 @@
                dataType:"json",
                data:{data: data}, //this is formData
                success: function(data){
-               	console.log(data);
+               	 if(data == 1){
+               	 	html='';
+               	 	$('#ModalAddmonth').modal('toggle');
+               	 	   html +='<tr>';  
+               	 	   html +='<th scope="row"></th>'; 
+               	 	   html +='<td>'+nameMonth+'</td>'; 
+               	 	   html +='<td>'+DateInitMonth+'</td>'; 
+               	 	   html +='<td>'+DateEndMonth+'</td>'; 
+               	 	   html +='<td><div class="progress" style="height: 8px;"><div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>';
+                       html +='</div></td>';       
+					   html +='</tr>';
+   					   $('#tbodyMonth').prepend(html);
+               	 }
+					
                 }
             });
 
@@ -54,7 +67,25 @@
 });
 
 
+
+
+
+
 function alert(headMessage,message){
 
 }
 
+function render_table() {
+     //        $.ajax({
+     //           type:"post",
+     //           url: BASE_URL+'gastos/reloadMonth',
+     //           dataType:"json",
+     //           data:{data: ''}, //this is formData
+     //           success: function(data){
+					// console.log(data);
+     //            }
+     //        });
+
+	  //   html +='</div>';
+   // $('#chatBox').append(html);
+}

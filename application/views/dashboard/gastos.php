@@ -319,7 +319,7 @@
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Message</a>
                                 <a class="dropdown-item" href="#">Settings</a>
-                                <a class="dropdown-item" href="#">Log Out</a>
+                                <a class="dropdown-item" href="<?php echo base_url('logout') ?>">Log Out</a>
                             </div>
                         </div>
                     </div>
@@ -453,7 +453,7 @@
                     <!-- Progress Table start -->
                     <div class="col-12 mt-5">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body" id="tableMonth">
                                 <h4 class="header-title">Progress Table</h4>
                                 <div class="single-table">
                                     <div class="table-responsive">
@@ -465,83 +465,29 @@
                                                     <th scope="col">Fecha de inicio</th>
                                                     <th scope="col">Fecha de fin</th>
                                                     <th scope="col">Total alcanzado</th>
-                                                    <th scope="col">status</th>
-                                                    <th scope="col">action</th>
+                                                    <th scope="col">Accion</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody id="tbodyMonth">
                                                 <?php foreach ($months as $key => $month) { ?>  
                                                 <tr>
                                                     <th scope="row"><?php echo $key; ?></th>
                                                     <td><?php echo $month['Name']; ?></td>
-                                                    <td>09 / 07 / 2018</td>
-                                                     <td>09 / 07 / 2018</td>
+                                                    <td><?php echo date("d/m/Y", strtotime($month['DateIni'])); ?></td>
+                                                     <td><?php echo date("d/m/Y", strtotime($month['DateFin'])); ?></td>
                                                     <td>
                                                         <div class="progress" style="height: 8px;">
                                                             <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
                                                     </td>
-                                                    <td><span class="status-p bg-primary">pending</span></td>
                                                     <td>
                                                         <ul class="d-flex justify-content-center">
                                                             <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
+                                                            <li><a href="<?php echo base_url('deleteMonth/'.$month['idmes']); ?>" class="text-danger" target=_blank><i class="ti-trash"></i></a></li>
                                                         </ul>
                                                     </td>
                                                 </tr>
                                                 <?php } ?>
-
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Mark</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <div class="progress" style="height: 8px;">
-                                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td><span class="status-p bg-warning">pending</span></td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Mark</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <div class="progress" style="height: 8px;">
-                                                            <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td><span class="status-p bg-success">complate</span></td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Mark</td>
-                                                    <td>09 / 07 / 2018</td>
-                                                    <td>
-                                                        <div class="progress" style="height: 8px;">
-                                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 85%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td><span class="status-p bg-warning">panding</span></td>
-                                                    <td>
-                                                        <ul class="d-flex justify-content-center">
-                                                            <li class="mr-3"><a href="#" class="text-secondary"><i class="fa fa-edit"></i></a></li>
-                                                            <li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
