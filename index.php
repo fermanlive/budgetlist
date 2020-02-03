@@ -54,6 +54,16 @@
  * NOTE: If you change these, also change the error_reporting() code below
  */
 	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+/*
+ *---------------------------------------------------------------
+ * COMPOSER AUTO-LOADING
+ *---------------------------------------------------------------
+ *
+ * Using this method, you don't need to set $config['composer_autoload']
+ * to TRUE in application/config/config.php. Also, all packages installed
+ * using Composer will be loaded immediately BEFORE any CodeIgniter classes
+ */
+require './vendor/autoload.php';
 
 /*
  *---------------------------------------------------------------
